@@ -199,22 +199,16 @@ struct AVL {
 };
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
+    cin.tie(0)->sync_with_stdio(false);
     int q;
     cin >> q;
-
     AVL T;
-
     for (int i = 0; i < q; i++) {
         int op;
         cin >> op;
-
         if (op == 1) {
             int s, e;
             cin >> s >> e;
-
             if (T.reservar(s, e)) {
                 cout << "SI\n";
             } else {
@@ -223,12 +217,10 @@ int main() {
         } else if (op == 2) {
             int s;
             cin >> s;
-
             T.root = T.erase(T.root, s);
         } else if (op == 3) {
             int t;
             cin >> t;
-
             T.consultar(t);
         }
     }
